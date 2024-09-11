@@ -33,9 +33,11 @@ export default {
   }
 };
 </script>
+
 <template>
   <div class="card p-3 text-center">
-    <img :src="pokemonImage" :style="imageStyle" alt="pokemon" class="img-fluid mb-2" />
+    <img :src="pokemonImage" :style="imageStyle" alt="pokemon" class="pokemon-img mb-2" />
+
     <input v-if="!descubierto" v-model="nombreIngresado" @keyup.enter="verificarNombre" class="form-control mb-2"
       placeholder="Adivina el nombre" />
     <div v-if="!descubierto" class="d-flex justify-content-center">
@@ -45,33 +47,32 @@ export default {
   </div>
 </template>
 
-
 <style scoped>
-.img-fluid {
-  max-width: 150px;
+.pokemon-img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
   height: auto;
 }
 
-/* Botón con colores del logo de Pokémon */
 .pokemon-btn {
   background: linear-gradient(45deg, #ebde69, #6681b9, #f17c7c);
-  /* Amarillo, azul, rojo */
   color: white;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
   font-size: 16px;
   font-weight: bolder;
-  transition: background 0.5s ease;
+  margin-top: 10px;
 }
 
 .pokemon-btn:hover {
   background: linear-gradient(45deg, #ff0000, #3b4cca, #ffcc00);
-  /* Rojo, azul, amarillo al hacer hover */
 }
 
 .card {
   border: 1px solid #ccc;
   border-radius: 10px;
+  margin-top: 20px;
 }
 </style>
